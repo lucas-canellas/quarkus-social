@@ -21,14 +21,14 @@ import java.util.stream.Collectors;
 @Path("/users/{userId}/posts")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-public class PostResources {
+public class PostResource {
 
     private UserRepository userRepository;
     private PostRepository postRepository;
     private FollowerRepository followerRepository;
 
     @Inject
-    public PostResources(UserRepository userRepository, PostRepository postRepository, FollowerRepository followerRepository) {
+    public PostResource(UserRepository userRepository, PostRepository postRepository, FollowerRepository followerRepository) {
         this.userRepository = userRepository;
         this.postRepository = postRepository;
         this.followerRepository = followerRepository;
