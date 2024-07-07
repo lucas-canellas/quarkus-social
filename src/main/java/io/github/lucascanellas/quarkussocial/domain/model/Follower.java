@@ -3,22 +3,21 @@ package io.github.lucascanellas.quarkussocial.domain.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Objects;
-
 @Entity
-@Table(name = "users")
+@Table(name = "followers")
 @Data
-public class User {
+public class Follower {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @Column(name = "age")
-    private Integer age;
-
+    @ManyToOne
+    @JoinColumn(name = "follower_id")
+    private User follower;
 
 }
